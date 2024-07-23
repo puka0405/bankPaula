@@ -1,10 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
-import userRoutes from "./routes/userRoutes";
-import transactionRoutes from "./routes/transactionRoutes";
-import cardRoutes from "./routes/cardRoutes";
-import loanRoutes from "./routes/loanRoutes";
-import paymentRoutes from "./routes/paymentRoutes";
+import userRoutes from "./routes/userRoutes.js";
+import transactionRoutes from "./routes/transactionRoutes.js";
+import cardRoutes from "./routes/cardRoutes.js";
+import loanRoutes from "./routes/loanRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;

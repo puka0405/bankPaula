@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Card from "../models/CardModel";
+import Card from "../models/CardModel.js";
 const cardRouter = Router();
 
 cardRouter.post('/', async (req, res) => {

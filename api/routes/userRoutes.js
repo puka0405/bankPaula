@@ -1,9 +1,9 @@
 import { Router } from "express";
-import User from "../models/UserModel";
+import User from "../models/UserModel.js";
 
-const router = Router();
+const userRoutes = Router();
 
-router.post('/', async (req, res) => {
+userRoutes.post('/', async (req, res) => {
     try {
         const newUser = new User(req.body);
         await newUser.save();
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.get('/', async (req, res) => {
+userRoutes.get('/', async (req, res) => {
     try {
         const users = await User.find();
         res.status(200).json(users);
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+userRoutes.put('/:id', async (req, res) => {
     try {
         const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json(updatedUser);
@@ -31,7 +31,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+userRoutes.delete('/:id', async (req, res) => {
     try {
         await User.findByIdAndDelete(req.params.id);
         res.status(200).json({ message: 'Usuario eliminado' });
@@ -40,4 +40,4 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-export default router;
+export default userRoutes;

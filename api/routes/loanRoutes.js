@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Loan from "../models/LoanModel";
+import Loan from "../models/LoanModel.js";
 const loanRouter = Router();
 
 loanRouter.post('/', async (req, res) => {
