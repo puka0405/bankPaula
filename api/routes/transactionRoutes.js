@@ -22,4 +22,4 @@ transactionRouter.get('/', async (req, res) => {
     }
 });
 
-module.exports = transactionRouter;
+export default transactionRouter;
