@@ -35,7 +35,7 @@ class ManagerCard {
 
     async getCards(){
         try {
-            const cards = await CardModel.find();
+            const cards = CardModel.find();
             return cards;
         } catch (error) {
             throw new Error(`Error al obtener tarjetas: ${error}`);
